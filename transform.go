@@ -92,8 +92,8 @@ func (im *Image) Shave(r Rect) (*Image, error) {
 	return im.applyRectFunc("shaving", C.ImageDataFunc(C.ShaveImage), r)
 }
 
-func (im *Image) Page(r Rect) (*Image, error) {
-	return im.applyRectFunc("paging", C.ImageDataFunc(C.pageImage), r)
+func (im *Image) Repage(r Rect) (*Image, error) {
+	return im.applyFunc("paging", C.ImageDataFunc(C.repage))
 }
 
 func (im *Image) Transform(crop, image string) *Image {
